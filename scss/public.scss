@@ -1,0 +1,348 @@
+/**
+ * @author      ZEUS Design - http://www.zeusdesign.com.tw
+ * @copyright   Copyright (c) 2016 ZEUS Design
+ */
+
+@import "_oa";
+
+@include font-face("Monaco", font-files("monaco/monaco.ttf", "monaco/monaco.otf"));
+@include font-face("icomoon", font-files("icomoon/icomoon.eot", "icomoon/icomoon.woff", "icomoon/icomoon.ttf", "icomoon/icomoon.svg"));
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  @include font-smoothing(antialiased);
+}
+
+* {
+  &, &:after, &:before {
+    vertical-align: top;
+    @include box-sizing(border-box);
+    @include selection(rgba(150, 200, 255, 1), rgba(255, 255, 255, 1));
+    @include font-smoothing(antialiased);
+  }
+}
+
+html {
+  height: 100%;
+  font-size: 75%; /* 16px*75%=12px */
+
+  body {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;  /* 1*12px=12px */
+    font-family: "Roboto", "微軟正黑體", Monaco, "Microsoft JhengHei" ;
+    background-color: rgba(255, 255, 255, 1.00);
+    color: rgba(43, 43, 43, 1.00);
+
+    @include font-smoothing(antialiased);
+
+  }
+}
+
+
+.icon-bars:before {
+  content: "\f0c9";
+}
+.icon-navicon:before {
+  content: "\f0c9";
+}
+.icon-reorder:before {
+  content: "\f0c9";
+}
+.icon-home3:before {
+  content: "\e905";
+}
+.icon-chevron-down:before {
+  content: "\e900";
+}
+.icon-chevron-left:before {
+  content: "\e901";
+}
+.icon-chevron-right:before {
+  content: "\e902";
+}
+.icon-chevron-up:before {
+  content: "\e903";
+}
+.icon-search:before {
+  content: "\e904";
+}
+
+
+
+
+
+$c_yellow: rgba(251, 209, 21, 1.00);
+$allwidth: 1000px;
+
+
+
+
+#header_boxs {
+  display: inline-block;
+  width: 100%;
+
+  .top_boxs, .nav_boxs {
+    display: inline-block;
+    width: 100%;
+
+    @include range-width(0, 1000px) {
+      padding: 0 15px;
+    }
+  }
+
+  .top_boxs {
+    background-color: $c_yellow;
+    height: 115px;
+    border-bottom: 2px solid rgba(241, 141, 4, 1.00);
+    position: relative;
+
+    @include range-width(0, 650px) {
+      height: 80px;
+    }
+
+    .top_box {
+      display: inline-block;
+      width: 100%;
+      margin: 0 auto;
+      max-width: $allwidth; 
+      padding: 25px 0;
+      position: relative;
+      z-index: 2;
+
+      @include range-width(0, 650px) {
+        padding: 15px 0;
+      }
+
+      @include clearfix();
+      
+      .logo {
+        display: inline-block;
+        cursor: pointer;
+        float: left;
+        border: 0;
+        outline: 0;
+        text-align: left;
+
+        @include range-width(0, 650px) {
+          width: 240px;
+        }
+
+
+        img {
+          width: 100%;
+          max-width: 100%;
+
+          @include range-width(0, 650px) {
+            max-width: 70%;
+          }
+        }
+      }
+
+      .search_boxs {
+        display: inline-block;
+        float: right;
+        width: 315px;
+        text-align: left;
+        padding-top: 25px;
+
+        @include range-width(0, 630px) {
+          display: none;
+        }
+
+        @include clearfix();
+
+        p {
+          padding: 10px 0;
+          margin: 0;
+          display: inline-block;
+          font-size: 1.3rem;
+          margin-right: 10px;
+        }
+
+        .search_box {
+          display: inline-block;
+          width: 85%;
+          float: right;
+          position: relative;
+
+          .m_in {
+            display: inline-block;
+            width: 100%;
+            height: 37px;
+            padding: 12px;
+            background-color: white;
+            border: 1px solid rgba(175, 175, 175, 1.00);
+            outline: 0;
+            color: rgba(149, 149, 149, 1.00);
+            font-size: 1.2rem;
+          }
+
+          button {
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 37px;
+            height: 37px;
+            background-color: transparent;
+            border: 1px solid rgba(175, 175, 175, 1.00);
+            outline: 0;
+
+            &:before {
+              display: inline-block;
+              cursor: pointer;
+              content: '\e904';
+              font-family: 'icomoon';
+              color: black;
+              font-size: 1.5rem;
+              @include transition(color .3s);
+            }
+
+            &:hover {
+              &:before {
+                color: $c_yellow;
+              }
+            }
+
+          }
+        }
+      }
+
+      .moble_nav_box {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        float: right;
+        background-color: rgba(0, 0, 255, 0.2);
+      }
+
+    }
+
+    &:before {
+      position: absolute;
+      display: inline-block;
+      content: '';
+      background-image: url(../img/head_lbg.png);
+      background-repeat: no-repeat;
+      bottom: 0;
+      left: 0;
+      width: 225px;
+      height: 108px;
+      z-index: 1;
+
+      @include range-width(0, 650px) {
+        width: 103px;
+        height: 44px;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      display: inline-block;
+      content: '';
+      background-image: url(../img/head_rbg.png);
+      background-repeat: no-repeat;
+      top: 0;
+      right: 0;
+      width: 199px;
+      height: 75px;
+      z-index: 1;
+
+      @include range-width(0, 650px) {
+        width: 90px;
+        height: 28px;
+      }
+    }
+  }
+
+  .nav_boxs {
+    border-bottom: 1px solid rgba(236, 236, 236, 1.00);
+    height: 50px;
+
+    @include range-width(0, 630px) {
+      display: none;
+    }
+
+    .nav_box {
+      display: inline-block;
+      width: 100%;
+      max-width: $allwidth;
+      @include clearfix();
+
+      > div {
+        display: inline-block;
+        position: relative;
+        width: calc(100% / 8);
+        float: left;
+        @include transition(background-color .3s);  
+
+        a {
+          display: inline-block;
+          cursor: pointer;
+          width: 100%;
+          color: black;
+          font-size: 1.2rem;
+          margin: 15px 0;
+        }
+
+        &:after {
+          display: inline-block;
+          position: absolute;
+          top: 15px;
+          right: 0;
+          content: '';
+          width: 1px;
+          height: 20px;
+          background-color: rgba(225, 225, 225, 1.00);
+        }
+
+        &:last-child {
+          &:after {
+            display: none;
+          }
+        }
+
+        &:hover {
+          font-weight: 600;
+          background-color: $c_yellow;
+        }
+      }
+    }
+  }
+}
+
+#middle_boxs {
+  display: inline-block;
+  width: 100%;
+  height: 940px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
