@@ -15,15 +15,18 @@
 
     <script src="js/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" ></script>
     <script src="js/public.js" language="javascript" type="text/javascript" ></script>
+    <script src="js/imgLiquid-min.js"></script>
 
   </head>
+
+
 
   <body lang="zh-tw">
 
     <div id='header_boxs'>
       <div class='top_boxs'>
         <div class='top_box'>
-          <a class='logo'><img  src='img/logo.png'></a>
+          <a class='logo'><img src='img/logo.png'></a>
 
           <div class='search_boxs'>
             <p>搜尋</p>
@@ -34,10 +37,10 @@
             </div>
           </div>
 
-          <!-- <div class='moble_nav_box icon-bars'></div> -->
-          
+          <div class='moble_open_icon icon-dehaze'></div>          
         </div>
       </div>
+
 
       <div class='nav_boxs'>
         <div class='nav_box'>
@@ -54,9 +57,63 @@
     </div>
 
 
+    <!-- 手機版menu open -->
+    <div id='moble_nav_boxs'>
+      <div class='m_logo_boxs'>
+        <a class='m_logo'><img src='img/logo.png'></a>
+        <div class='moble_close_icon icon-close'></div>
+      </div>
 
-    <div id='middle_boxs'></div>
+      <div class='m_search_boxs'>
+        <p>搜尋</p>
 
+        <div class='m_search_box'>
+          <input type='text' value='請輸入查詢關鍵字' class='mm_in'>
+          <button></button>
+        </div>
+      </div>
+
+      <div class='m_nav_box'><a>社區公告</a></div>
+      <div class='m_nav_box'><a>會議記錄</a></div>
+      <div class='m_nav_box'><a>財務報表</a></div>
+      <div class='m_nav_box'><a>相簿</a></div>
+      <div class='m_nav_box'><a>行事曆</a></div>
+      <div class='m_nav_box'><a>工作追蹤</a></div>
+      <div class='m_nav_box'><a>巡邏紀錄</a></div>
+      <div class='m_nav_box'><a>其他資料</a></div>     
+    </div>
+
+
+    <!-- Big Banner -->
+    <div class='banner' data-time='6.5'>
+      <div class='box'>
+        <div class='item'><img src="img/banner01.jpg"></div>
+        <div class='item'><img src="img/banner02.jpg"></div>
+        <div class='item'><img src="img/banner03.jpg"></div>
+      </div>
+
+      <a class='av left icon-chevron-left'></a>
+      <a class='av right icon-chevron-right'></a>
+    </div>
+
+
+    <div id='middle_boxs'>
+      <div class='middle_box'>
+        <div class='m_l_boxs'>
+          <div class='m_title_boxs'>
+            <p class='m_title'>相簿</p>
+          </div>
+        </div>
+
+        <div class='m_r_boxs'>
+          <div class='m_title_boxs'>
+            <p class='m_title'>相簿</p>
+            <a class='m_more'>more</a>
+          </div>
+          <div class='m_pic'><img src="img/m_pic.jpg"></div>
+        </div>
+      </div>
+    </div>
 
 
   </body>

@@ -50,17 +50,11 @@ html {
 }
 
 
-.icon-bars:before {
-  content: "\f0c9";
+.icon-close:before {
+  content: "\e5cd";
 }
-.icon-navicon:before {
-  content: "\f0c9";
-}
-.icon-reorder:before {
-  content: "\f0c9";
-}
-.icon-home3:before {
-  content: "\e905";
+.icon-dehaze:before {
+  content: "\e3c7";
 }
 .icon-chevron-down:before {
   content: "\e900";
@@ -74,6 +68,9 @@ html {
 .icon-chevron-up:before {
   content: "\e903";
 }
+.icon-home3:before {
+  content: "\e905";
+}
 .icon-search:before {
   content: "\e904";
 }
@@ -81,10 +78,9 @@ html {
 
 
 
-
 $c_yellow: rgba(251, 209, 21, 1.00);
 $allwidth: 1000px;
-
+$bannerwidth:1345px;
 
 
 
@@ -108,7 +104,8 @@ $allwidth: 1000px;
     position: relative;
 
     @include range-width(0, 650px) {
-      height: 80px;
+      height: 100%;
+      border-bottom: 0;
     }
 
     .top_box {
@@ -135,16 +132,15 @@ $allwidth: 1000px;
         text-align: left;
 
         @include range-width(0, 650px) {
-          width: 240px;
+          width: calc(100% - 50px);
         }
-
 
         img {
           width: 100%;
           max-width: 100%;
 
           @include range-width(0, 650px) {
-            max-width: 70%;
+            width: 160px
           }
         }
       }
@@ -156,7 +152,7 @@ $allwidth: 1000px;
         text-align: left;
         padding-top: 25px;
 
-        @include range-width(0, 630px) {
+        @include range-width(0, 650px) {
           display: none;
         }
 
@@ -219,27 +215,36 @@ $allwidth: 1000px;
         }
       }
 
-      .moble_nav_box {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        float: right;
-        background-color: rgba(0, 0, 255, 0.2);
+      // 手機版menu icon list open
+      .moble_open_icon {
+        display: none;
+
+        @include range-width(0, 650px) {
+          display: inline-block;
+          float: right;
+          font-size: 2rem;
+          text-align: right;
+          margin-top: -5px;
+        }
       }
 
     }
 
-    &:before {
+    &:before, &:after {
       position: absolute;
       display: inline-block;
       content: '';
-      background-image: url(../img/head_lbg.png);
       background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 1;
+    }
+
+    &:before {
+      background-image: url(../img/head_lbg.png);
       bottom: 0;
       left: 0;
       width: 225px;
       height: 108px;
-      z-index: 1;
 
       @include range-width(0, 650px) {
         width: 103px;
@@ -248,29 +253,25 @@ $allwidth: 1000px;
     }
 
     &:after {
-      position: absolute;
-      display: inline-block;
-      content: '';
       background-image: url(../img/head_rbg.png);
-      background-repeat: no-repeat;
       top: 0;
       right: 0;
       width: 199px;
       height: 75px;
-      z-index: 1;
 
       @include range-width(0, 650px) {
         width: 90px;
-        height: 28px;
+        height: 40px;
       }
     }
   }
 
+  // 白色選單曲
   .nav_boxs {
     border-bottom: 1px solid rgba(236, 236, 236, 1.00);
     height: 50px;
 
-    @include range-width(0, 630px) {
+    @include range-width(0, 650px) {
       display: none;
     }
 
@@ -292,8 +293,9 @@ $allwidth: 1000px;
           cursor: pointer;
           width: 100%;
           color: black;
-          font-size: 1.2rem;
+          font-size: 1.3rem;
           margin: 15px 0;
+          text-decoration: none;
         }
 
         &:after {
@@ -322,10 +324,333 @@ $allwidth: 1000px;
   }
 }
 
+
+// 手機版menu
+#moble_nav_boxs {
+  display: inline-block;
+  width: 240px;
+  background-color: $c_yellow;
+  height: 100%;
+  overflow: scroll;
+  position: fixed;
+  top: 0;
+  right: -240px;
+  z-index: 3;
+  @include opacity(0);
+  @include transition(right .3s, opacity .3s);
+  
+
+  &.s_open {
+    right: 0;
+    @include opacity(1);
+  }
+
+  .m_logo_boxs {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 72px;
+    padding: 15px 10px;
+
+    .m_logo {
+      display: inline-block;
+      cursor: pointer;
+      float: left;
+      border: 0;
+      outline: 0;
+      text-align: left;
+      position: relative;
+      z-index: 5;
+
+      img {
+        width: 160px
+      }
+    }
+
+    .moble_close_icon {
+      display: inline-block;
+      float: right;
+      font-size: 2rem;
+      text-align: right;
+      margin-top: -5px;
+      padding-right: 6px;
+      position: relative;
+      z-index: 5;
+    }
+
+    &:before, &:after {
+      position: absolute;
+      display: inline-block;
+      content: '';
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 4;
+    }
+
+    &:before {
+      background-image: url(../img/head_lbg.png);
+      bottom: 0;
+      left: 0;
+      width: 103px;
+      height: 44px;
+    }
+
+    &:after {
+      background-image: url(../img/head_rbg.png);
+      top: 0;
+      right: 0;
+      width: 90px;
+      height: 40px;
+    }
+  }
+
+  .m_search_boxs {
+    display: inline-block;
+    float: right;
+    width: 100%;
+    text-align: left;
+    padding: 15px 10px;
+
+    @include clearfix();
+
+    p {
+      padding: 7px 0;
+      margin: 0;
+      display: inline-block;
+      font-size: 1.3rem;
+    }
+
+    .m_search_box {
+      display: inline-block;
+      width: calc(100% - 37px);
+      float: right;
+      position: relative;
+
+      .mm_in {
+        display: inline-block;
+        width: 100%;
+        height: 37px;
+        padding: 12px;
+        background-color: white;
+        border: 1px solid rgba(175, 175, 175, 1.00);
+        outline: 0;
+        color: rgba(149, 149, 149, 1.00);
+        font-size: 1.2rem;
+      }
+
+      button {
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 37px;
+        height: 37px;
+        background-color: transparent;
+        border: 1px solid rgba(175, 175, 175, 1.00);
+        outline: 0;
+
+        &:before {
+          display: inline-block;
+          cursor: pointer;
+          content: '\e904';
+          font-family: 'icomoon';
+          color: black;
+          font-size: 1.5rem;
+          @include transition(color .3s);
+        }
+
+        &:hover {
+          &:before {
+            color: $c_yellow;
+          }
+        }
+
+      }
+    }
+  }
+
+  .m_nav_box {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    @include transition(background-color .3s);  
+
+    a {
+      display: inline-block;
+      cursor: pointer;
+      width: 100%;
+      color: black;
+      font-size: 1.4rem;
+      text-decoration: none;
+    }
+
+    &:hover {
+      font-weight: 600;
+      background-color: rgba(255, 186, 0, 1.00);
+    }
+  }
+
+}
+
+
+// banner
+.banner {
+  display: inline-block;
+  width: 100%;
+
+  .box {
+    display: inline-block;
+    width: $bannerwidth;
+    margin: 0 auto;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+
+    @include range-width(0, 650px) {
+      height: 200px;
+    }
+
+    .item {
+      width: $bannerwidth;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding-right: 30px;
+
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          left: $bannerwidth * ($i - 2);
+        }
+      }
+    }
+  }
+
+  .av {
+    position: absolute;
+    left: 40px;
+    top: 43%;
+    display: inline-block;
+    // width: 80px;
+    // height: 80px;
+    font-size: 5em;
+    color: white;
+    @include transition(all .3s);
+
+    @include range-width(0, 650px) {
+      font-size: 3em;
+      top: 26%;
+      left: 5px;
+    }
+
+    &.right {
+      left: auto;
+      right: 40px;
+
+      @include range-width(0, 650px) {
+        right: 5px;
+      }
+    }
+
+    &:hover, &:active {
+      color: $c_yellow;
+    }
+  }
+
+}
+
+
 #middle_boxs {
   display: inline-block;
   width: 100%;
-  height: 940px;
+
+  .middle_box {
+    display: inline-block;
+    width: 100%;
+    max-width: $allwidth;
+    padding: 40px 20px;
+    @include clearfix();
+    
+    border: 1px solid rgba(255, 0, 0, .3);
+
+    .m_l_boxs, .m_r_boxs {
+      display: inline-block;
+      text-align: left;
+
+      .m_title_boxs {
+        display: inline-block;
+        width: 100%;
+        border-bottom: 2px solid rgba(200, 200, 200, 1.00);
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        @include clearfix();
+
+        .m_title {
+          padding: 0;
+          margin: 0;
+          display: inline-block;
+          font-size: 2rem;
+          font-weight: 600;
+          float: left;
+
+          &:before {
+            display: inline-block;
+            content: '\e902';
+            width: 30px;
+            height: 30px;
+            @include border-radius(15px);
+            background-color: $c_yellow;
+            color: white;
+            font-family: 'icomoon';
+            font-size: 2rem;
+            padding: 2px 5px;
+            margin: 2px 10px 0 0;
+          }
+        }
+
+        .m_more {
+          display: inline-block;
+          cursor: pointer;
+          font-size: 1.5rem;
+          float: right;
+          padding-top: 13px;
+          text-decoration: none;
+
+          &:after {
+            display: inline-block;
+            content: '\e902';
+            font-family: 'icomoon';
+            font-size: 1.3rem;
+            color: $c_yellow;
+            margin-top: 3px;
+          }
+        }
+      }
+    }
+
+    .m_l_boxs {
+      width: 480px;
+      height: 300px;
+      float: left;
+    }
+
+    .m_r_boxs {
+      width: 430px;
+      height: 300px;
+      float: right;
+      padding-left: 50px; 
+
+      .m_pic {
+        display: inline-block;
+        width: 100%;
+
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
 }
 
 
