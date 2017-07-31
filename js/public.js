@@ -16,40 +16,21 @@ $(function() {
   });
 
 
-  $(".item").imgLiquid ();
-
+  $(".banner .item").imgLiquid ();
 
   $('.banner').each (function () {
+    var $that = $(this), $a = $that.find ('a'), $points = $that.find ('.points');
+    $that.attr ('data-n', 1).data ('l', $that.find ('>.item').length);
 
-    $(this).find ('.left').click (function() {
-      // clone是複製前面這組class的意思
-      var a = $(this).find ('.box .item').first ().clone();
-      $(this).find ('.box .item').first ().remove ();
-       // a.appendTo('#box');
-       $(this).find ('.box').append(a);
-       // append是“加入到＿＿前面”
-    }.bind ($(this)));
+    $a.click (function () {
+      var n = parseInt ($that.attr ('data-n'), 10);
+      
+      if ($(this).hasClass ('left')) $that.attr ('data-n', n < 2 ? $that.data ('l') : n - 1);
+      if ($(this).hasClass ('right')) $that.attr ('data-n', n >= $that.data ('l') ? 1 : n + 1);
+    });
 
-    $(this).find ('.right').click (function() {
-      var a = $(this).find ('.box .item').last ().clone();
-      $(this).find ('.box .item').last ().remove ();
-      // a.prependTo('#box');
-      $(this).find ('.box').prepend(a);
-      // prepend是“加入到＿＿後面”
-    }.bind ($(this))).click ();
+    $points.append ($('<span />').append (Array.apply (null, Array ($that.data ('l'))).map (function (_, i) { return $('<i />').attr ('data-i', i).click (function () { $that.attr ('data-n', $(this).index () + 1); }); })));
 
-
-    if ($(this).data ('time')) {
-      setInterval (function () {
-        $(this).find ('.left').click ();
-      }.bind ($(this)), parseInt ($(this).data ('time'), 10) * 1000);
-    }
-
-    setTimeout (function () {
-      $(this).addClass ('tran');
-    }.bind ($(this)), 300);
-
+    if ($that.data ('time')) setTimeout (function () { $a.filter ('.right').click (); }, parseInt ($that.data ('time'), 10) * 1000);
   });
-
-
 });

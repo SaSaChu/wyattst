@@ -80,7 +80,7 @@ html {
 
 $c_yellow: rgba(251, 209, 21, 1.00);
 $allwidth: 1000px;
-$bannerwidth:1345px;
+
 
 
 
@@ -490,76 +490,124 @@ $bannerwidth:1345px;
       background-color: rgba(255, 186, 0, 1.00);
     }
   }
-
 }
 
-
-// banner
 .banner {
+  position: relative;
   display: inline-block;
   width: 100%;
+  height: 400px;
+  overflow: hidden;
 
-  .box {
-    display: inline-block;
-    width: $bannerwidth;
-    margin: 0 auto;
-    height: 400px;
-    overflow: hidden;
-    position: relative;
-
-    @include range-width(0, 650px) {
-      height: 200px;
-    }
-
-    .item {
-      width: $bannerwidth;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding-right: 30px;
-
-      @for $i from 1 through 10 {
-        &:nth-child(#{$i}) {
-          left: $bannerwidth * ($i - 2);
-        }
-      }
-    }
+  @include range-width(0, 650px) {
+    height: 200px;
   }
 
-  .av {
+  > * {
     position: absolute;
-    left: 40px;
-    top: 43%;
+    top: 0;
     display: inline-block;
-    // width: 80px;
-    // height: 80px;
+  }
+  > a {
+    top: calc(50% - 65px / 2);
+    z-index: 3;
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+    
     font-size: 5em;
     color: white;
-    @include transition(all .3s);
+    z-index: 5;
+    cursor: pointer;
+    @include transition(color .3s);
 
     @include range-width(0, 650px) {
       font-size: 3em;
-      top: 26%;
-      left: 5px;
     }
 
+    &.left {
+      left: 0;
+      @include range-width(0, 650px) {
+        left: 5px;
+      }
+    }
     &.right {
-      left: auto;
-      right: 40px;
-
+      right: 0;
       @include range-width(0, 650px) {
         right: 5px;
       }
-    }
 
+    }
     &:hover, &:active {
       color: $c_yellow;
     }
   }
 
+  .item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+    @include transition(left .3s);
+    
+    
+    img {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+  .points {
+    top: auto;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+    text-align: center;
+    > * {
+      display: inline-block;
+      margin: 0 auto;
+      @include clearfix();
+      
+      > * {
+        float: left;
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background-color: white;
+        margin: 2px;
+        @include transition(transform .3s);
+        cursor: pointer;
+        @include box-shadow(1px 1px 1px rgba(39, 40, 34, .50));
+      }
+    }
+  }
+  @for $i from 1 through 5 {
+    &[data-n='#{$i}'] {
+      .item {
+        @for $j from 1 through 5 {
+          &:nth-child(#{$j}) {
+            left: 100% * ($j - $i);
+            @if($i == $j) {
+              position: relative;
+              z-index: 3;
+            }
+          }
+        }
+      }
+      .points > * > *:nth-child(#{$i}) {
+        background-color: $c_yellow !important;
+        
+        &:before {
+          color: white;
+        }
+      }
+    }
+  }
 }
-
 
 #middle_boxs {
   display: inline-block;
@@ -821,10 +869,33 @@ $bannerwidth:1345px;
       .m_pic {
         display: inline-block;
         width: 100%;
+        height: 230px + 24px + 8px;
+        .item {
+          height: 230px;
+        }
+        a {
+          top: calc(50% - 65px / 2 - (24px + 8px) / 2);
+        }
 
-        img {
-          width: 100%;
-          max-width: 100%;
+        .points {
+          bottom: 0;
+          height: 24px;
+
+          span {
+            * {
+              width: 24px;
+              height: 24px;
+              line-height: 24px;
+              color: rgba(136, 136, 136, 1.00);
+              background-color: rgba(237, 237, 237, 1.00);
+              @include box-shadow(none);
+
+              &:before {
+                content: attr(data-i);
+                font-style: normal;
+              }
+            }
+          }
         }
       }
     }
