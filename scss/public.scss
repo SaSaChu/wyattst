@@ -599,7 +599,11 @@ $allwidth: 1000px;
         }
       }
       .points > * > *:nth-child(#{$i}) {
-        background-color: $c_yellow;
+        background-color: $c_yellow !important;
+        
+        &:before {
+          color: white;
+        }
       }
     }
   }
@@ -865,10 +869,33 @@ $allwidth: 1000px;
       .m_pic {
         display: inline-block;
         width: 100%;
+        height: 230px + 24px + 8px;
+        .item {
+          height: 230px;
+        }
+        a {
+          top: calc(50% - 65px / 2 - (24px + 8px) / 2);
+        }
 
-        img {
-          width: 100%;
-          max-width: 100%;
+        .points {
+          bottom: 0;
+          height: 24px;
+
+          span {
+            * {
+              width: 24px;
+              height: 24px;
+              line-height: 24px;
+              color: rgba(136, 136, 136, 1.00);
+              background-color: rgba(237, 237, 237, 1.00);
+              @include box-shadow(none);
+
+              &:before {
+                content: attr(data-i);
+                font-style: normal;
+              }
+            }
+          }
         }
       }
     }

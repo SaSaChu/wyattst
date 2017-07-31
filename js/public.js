@@ -29,7 +29,7 @@ $(function() {
       if ($(this).hasClass ('right')) $that.attr ('data-n', n >= $that.data ('l') ? 1 : n + 1);
     });
 
-    $points.append ($('<span />').append (Array.apply (null, Array ($that.data ('l'))).map (function () { return $('<i />').click (function () { $that.attr ('data-n', $(this).index () + 1); }); })));
+    $points.append ($('<span />').append (Array.apply (null, Array ($that.data ('l'))).map (function (_, i) { return $('<i />').attr ('data-i', i).click (function () { $that.attr ('data-n', $(this).index () + 1); }); })));
 
     if ($that.data ('time')) setTimeout (function () { $a.filter ('.right').click (); }, parseInt ($that.data ('time'), 10) * 1000);
   });
