@@ -229,6 +229,11 @@ $c_green: rgba(0, 148, 139, 1.00);
       line-height: 2rem;
       margin-bottom: 20px;
     }
+
+    &.date_boder {
+      font-weight: bolder;
+      margin-bottom: 0;
+    }
   }
 
   .date_pic {

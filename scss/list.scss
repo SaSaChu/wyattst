@@ -163,6 +163,26 @@ $c_green: rgba(0, 148, 139, 1.00);
         background-repeat: no-repeat;
       }
 
+      &.path_pic_b {
+        background-image: url(../img/211/211.png);
+        background-repeat: no-repeat;
+      }
+
+      &.path_pic_c {
+        background-image: url(../img/311/311.png);
+        background-repeat: no-repeat;
+      }
+
+      &.path_pic_f {
+        background-image: url(../img/611/611.png);
+        background-repeat: no-repeat;
+      }
+
+      &.path_pic_h {
+        background-image: url(../img/811/811.png);
+        background-repeat: no-repeat;
+      }
+
       .path_title {
         position: relative;
         display: inline-block;
@@ -205,6 +225,15 @@ $c_green: rgba(0, 148, 139, 1.00);
       @include range-width(0, 650px) {
         padding: 15px;
       }
+
+      &.path_s {
+        height: 85px;
+        padding: 0;
+
+        @include range-width(0, 690px) {
+          height: 40px;
+        }
+      }
   
       .path_term_box {
         display: inline-block;
@@ -222,30 +251,51 @@ $c_green: rgba(0, 148, 139, 1.00);
           margin-right: 30px;
 
           @include range-width(0, 650px) {
-            width: calc(50% - 2px);
+            width: calc(50% - 10px / 2 - 2px);
             margin-right: 0;
+
+            &:nth-child(2) {
+              float: right;
+            }
+          }
+
+          &.path_work {
+            display: inline-block;
+            margin-right: 30px;
+
+            @include range-width(0, 650px) {
+              width: 100%;
+              margin-right: 0;
+              margin-top: 10px;
+            }
           }
 
           .path_term {
             display: inline-block;
+            width: 82px;
             color: $c_dgrey;
             font-size: 1.5rem;
             line-height: 25px;
             float: left;
-            padding-right: 10px;
 
             @include range-width(0, 650px) {
               font-size: 1rem;
+              width: 60px;
             }
           }
 
           .path_label {
             display: inline-block;
-            padding-right: 10px;
+            margin-right: 10px;
             float: left;
             height: 25px;
             border: 1px solid rgba(175, 175, 175, 1.00);
             outline: 0;
+
+            @include range-width(0, 650px) {
+              margin-right: 0;
+              width: calc(100% - 60px);
+            }
 
             select {
               background: transparent;
@@ -404,6 +454,8 @@ $c_green: rgba(0, 148, 139, 1.00);
           margin: 3px 15px 0 0;
           float: left;
 
+          @include clearfix();
+
           @include range-width(0, 650px) {
             width: 100%;
           }
@@ -420,7 +472,10 @@ $c_green: rgba(0, 148, 139, 1.00);
             text-align: left;
 
             @include range-width(0, 650px) {
+              width: auto;
               font-size: 1rem;
+              margin-right: 5px;
+              padding-top: 5px; 
             }
 
             &:before {
@@ -447,24 +502,29 @@ $c_green: rgba(0, 148, 139, 1.00);
             }
           }
 
-          .pat_mode_r {
+          .pat_mode_r, .pat_mode_g {
             display: inline-block;
             margin: 10px 0 0 5px;
-            color: red;
             font-size: 1.2rem;
-            border: 1px solid red;
             font-weight: 600;
             padding: 3px 10px;
+
+            @include range-width(0, 690px) {
+              margin: 0;
+              float: left;
+              font-size: 1rem;
+              padding: 1px 5px;
+            }
+          }
+
+          .pat_mode_r {
+            color: red;
+            border: 1px solid red;
           }
 
           .pat_mode_g {
-            display: inline-block;
-            margin: 10px 0 0 5px;
             color: $c_green;
-            font-size: 1.2rem;
-            border: 1px solid $c_green;
-            font-weight: 600;
-            padding: 3px 10px;
+            border: 1px solid $c_green;            
           }
         }
 
@@ -488,6 +548,30 @@ $c_green: rgba(0, 148, 139, 1.00);
             text-decoration: none;
             line-height: 2.8rem;
             @include transition(color .3s); 
+
+
+            &.p_title {
+              font-size: 2rem;
+              font-weight: bolder;
+              text-decoration: underline;
+
+              @include range-width(0, 650px) {
+                font-size: 1.3rem;
+                line-height: 1.8rem;
+                text-decoration: none;
+              }
+            }
+
+            &.p_cent {
+              font-size: 1.5rem;
+              text-decoration: underline;
+
+              @include range-width(0, 650px) {
+                font-size: 1.3rem;
+                line-height: 1.8rem;
+                text-decoration: none;
+              }
+            }
 
             &:hover, &:active {
               color: $c_green;
