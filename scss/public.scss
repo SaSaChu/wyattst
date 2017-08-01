@@ -929,6 +929,43 @@ $c_green: rgba(0, 148, 139, 1.00);
   }
 }
 
+#gotoTop {
+  display: none;
+  // display: none;
+  position: fixed;
+  right: 50px;
+  bottom: 30px;    
+  padding: 10px 15px;    
+  background-color: $c_yellow;
+  width: 60px;
+  height: 60px;
+  @include border-radius(30px);
+  
+  p {
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
+    margin-top: -4px;
+    @include transition(background-color .3s);
+
+    &:before {
+      display: inline-block;
+      content: '\e903';
+      font-family: 'icomoon';
+      font-size: 2rem;
+      font-weight: bolder;
+      margin-bottom: -5px;
+    }
+  }
+
+  &:hover, &:active {
+    background-color: rgba(251, 209, 21, .8);
+  }
+}
+
 
 
 
