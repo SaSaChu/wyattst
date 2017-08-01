@@ -50,6 +50,9 @@ html {
 }
 
 
+.icon-ora:before {
+  content: "\e908";
+}
 .icon-nl:before {
   content: "\e906";
 }
@@ -86,7 +89,11 @@ html {
 
 $c_yellow: rgba(251, 209, 21, 1.00);
 $allwidth: 1000px;
-
+$c_yellow: rgba(251, 209, 21, 1.00);
+$allwidth: 1000px;
+$c_lgrey: rgba(243, 243, 243, 1.00);
+$c_dgrey: rgba(43, 43, 43, 1.00);
+$c_green: rgba(0, 148, 139, 1.00);
 
 
 
@@ -703,6 +710,7 @@ $allwidth: 1000px;
           float: right;
           padding-top: 13px;
           text-decoration: none;
+          color: $c_dgrey;
 
           &:after {
             display: inline-block;

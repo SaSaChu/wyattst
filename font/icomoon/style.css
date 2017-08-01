@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?vw8fdv');
-  src:  url('fonts/icomoon.eot?vw8fdv#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?vw8fdv') format('truetype'),
-    url('fonts/icomoon.woff?vw8fdv') format('woff'),
-    url('fonts/icomoon.svg?vw8fdv#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?yc3k5w');
+  src:  url('fonts/icomoon.eot?yc3k5w#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?yc3k5w') format('truetype'),
+    url('fonts/icomoon.woff?yc3k5w') format('woff'),
+    url('fonts/icomoon.svg?yc3k5w#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-ora:before {
+  content: "\e908";
+  color: #ffd402;
+}
 .icon-nl:before {
   content: "\e906";
   color: #ffd402;
