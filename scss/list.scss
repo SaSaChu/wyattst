@@ -50,34 +50,6 @@ html {
 }
 
 
-.icon-close:before {
-  content: "\e5cd";
-}
-.icon-dehaze:before {
-  content: "\e3c7";
-}
-.icon-chevron-down:before {
-  content: "\e900";
-}
-.icon-chevron-left:before {
-  content: "\e901";
-}
-.icon-chevron-right:before {
-  content: "\e902";
-}
-.icon-chevron-up:before {
-  content: "\e903";
-}
-.icon-home3:before {
-  content: "\e905";
-}
-.icon-search:before {
-  content: "\e904";
-}
-
-
-
-
 $c_yellow: rgba(251, 209, 21, 1.00);
 $allwidth: 1000px;
 $c_lgrey: rgba(243, 243, 243, 1.00);
@@ -94,12 +66,20 @@ $c_green: rgba(0, 148, 139, 1.00);
     display: inline-block;
     width: 100%;
     max-width: $allwidth;
-    padding: 15px 30px;
+    padding: 15px 25px;
     text-align: left;
+
+    @include range-width(0, 650px) {
+      padding: 10px 15px;
+    }
 
     .path {
       display: inline-block;
       font-size: 1.2rem;
+
+      @include range-width(0, 650px) {
+        font-size: 1rem;
+      }
 
       &:after {
         display: inline-block;
@@ -107,6 +87,10 @@ $c_green: rgba(0, 148, 139, 1.00);
         font-family: 'icomoon';
         color: $c_dgrey;
         margin: 2px 15px 0 15px;
+
+        @include range-width(0, 650px) {
+          margin: 2px 7px 0 7px
+        }
       }
 
       &:last-child {
@@ -146,6 +130,11 @@ $c_green: rgba(0, 148, 139, 1.00);
             margin-right: 5px;
             margin-top: 1px;
             @include transition(color .3s);
+
+            @include range-width(0, 650px) {
+              font-size: 1.2rem;
+              margin-top: 0;
+            }
           }
         }
         
@@ -161,15 +150,496 @@ $c_green: rgba(0, 148, 139, 1.00);
     .path_banner_boxs {
       display: inline-block;
       width: 100%;
-      
-      img {
-        width: 100%;
-        max-width: 100%;
+      max-width: 100%;
+      height: 160px;
+      text-align: left;
+
+      @include range-width(0, 650px) {
+        height: 80px;
+      }
+
+      &.path_pic_a {
+        background-image: url(../img/111/111.png);
+        background-repeat: no-repeat;
+      }
+
+      .path_title {
+        position: relative;
+        display: inline-block;
+        color: $c_dgrey;
+        font-size: 3rem;
+        font-weight: bolder;
+        line-height: 150px;
+        letter-spacing: 3px;
+        margin-left: 20px;
+
+        @include range-width(0, 650px) {
+          font-size: 1.5rem;
+          line-height: 70px;
+          margin-left: 15px;
+        }
+
+        &:after {
+          position: absolute;
+          left: 0;
+          top: 70%;
+          display: inline-block;
+          content: '';
+          width: 40px;
+          height: 3px;
+          background-color: $c_yellow;
+
+          @include range-width(0, 650px) {
+            width: 25px;
+          }
+        }
       }
     }
-    .path_search_boxs {}
-    .path_cent_boxs {}
-    .path_number_boxs {}
+
+    .path_search_boxs {
+      display: inline-block;
+      width: 100%;
+      padding: 29px 20px;
+      @include clearfix();
+
+      @include range-width(0, 650px) {
+        padding: 15px;
+      }
+  
+      .path_term_box {
+        display: inline-block;
+        width: calc(100% - 270px);
+        float: left;
+        text-align: left;
+        @include clearfix();
+
+        @include range-width(0, 650px) {
+          width: 100%;
+        }
+
+        .path_form_boxs {
+          display: inline-block;
+          margin-right: 30px;
+
+          @include range-width(0, 650px) {
+            width: calc(50% - 2px);
+            margin-right: 0;
+          }
+
+          .path_term {
+            display: inline-block;
+            color: $c_dgrey;
+            font-size: 1.5rem;
+            line-height: 25px;
+            float: left;
+            padding-right: 10px;
+
+            @include range-width(0, 650px) {
+              font-size: 1rem;
+            }
+          }
+
+          .path_label {
+            display: inline-block;
+            padding-right: 10px;
+            float: left;
+            height: 25px;
+            border: 1px solid rgba(175, 175, 175, 1.00);
+            outline: 0;
+
+            select {
+              background: transparent;
+              border: none;
+              height: 25px;
+              color: $c_dgrey;
+              font-size: 1.3rem;
+
+              @include range-width(0, 650px) {
+                font-size: 1rem;
+              }
+
+            }
+          }
+        }
+
+        button {
+          display: inline-block;
+          cursor: pointer;
+          padding: 2px 20px;
+          color: $c_dgrey;
+          font-size: 1.3rem;
+          background-color: $c_yellow;
+          outline: 0;
+          border: 0;
+          @include transition(background-color .3s); 
+
+          @include range-width(0, 650px) {
+            width: 100%;
+            font-size: 1rem;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            padding: 10px 0;
+          }       
+
+          &:hover, &:active {
+            background-color: rgba(251, 209, 21, .7);
+          }
+        }
+        
+      }
+
+      .path_search_box {
+        display: inline-block;
+        width: 270px;
+
+        @include range-width(0, 650px) {
+          width: 100%;
+        }
+
+        p {
+          display: inline-block;
+          width: 55px;
+          padding: 0;
+          margin: 0;
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: $c_dgrey;
+          margin-right: 10px;
+          float: left;
+          line-height: 27px;
+
+          @include range-width(0, 650px) {
+            font-size: 1.2rem;
+            text-align: left;
+            margin-right: 5px;
+          }
+        }
+
+        .path_search {
+          display: inline-block;
+          width: 200px;
+          float: right;
+          position: relative;
+          @include clearfix();
+
+          @include range-width(0, 650px) {
+            width: calc(100% - 60px);
+          }
+
+          .path_in {
+            display: inline-block;
+            width: 100%;
+            height: 25px;
+            padding: 5px 10px;
+            background-color: white;
+            border: 1px solid rgba(175, 175, 175, 1.00);
+            outline: 0;
+            color: rgba(149, 149, 149, 1.00);
+            font-size: 1.3rem;
+            float: left;
+
+            @include range-width(0, 650px) {
+              font-size: 1.2rem;
+            }
+          }
+
+          button {
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 30px;
+            height: 25px;
+            background-color: transparent;
+            border: 1px solid rgba(175, 175, 175, 1.00);
+            outline: 0;
+
+            &:before {
+              display: inline-block;
+              cursor: pointer;
+              content: '\e904';
+              font-family: 'icomoon';
+              color: black;
+              font-size: 1.5rem;
+              @include transition(color .3s);
+
+              @include range-width(0, 650px) {
+                font-size: 1.3rem;
+              }
+            }
+
+            &:hover, &:active {
+              &:before {
+                color: $c_yellow;
+              }
+            }
+
+          }
+        }
+      }
+    }
+
+    .path_cent_boxs {
+      display: inline-block;
+      width: 100%;
+
+      .path_table {
+        display: inline-block;
+        width: 100%;
+        padding: 25px 20px; 
+        background-color: white;
+        @include clearfix();
+
+        &:nth-child(2n + 1) {
+          background-color: rgba(241, 241, 241, 1.00);
+        }
+
+        @include range-width(0, 650px) {
+          padding: 10px 15px; 
+        }
+
+        .path_date_boxs {
+          display: inline-block;
+          width: 120px;
+          margin: 3px 15px 0 0;
+          float: left;
+
+          @include range-width(0, 650px) {
+            width: 100%;
+          }
+
+          .path_date {
+            display: inline-block;
+            color: rgba(146, 146, 146, 1.00);
+            padding: 0;
+            margin: 0;
+            width: 120px;
+            float: left;
+            font-size: 1.5rem;
+            color: rgba(146, 146, 146, 1.00);
+            text-align: left;
+
+            @include range-width(0, 650px) {
+              font-size: 1rem;
+            }
+
+            &:before {
+              display: inline-block;
+              content: '\e902';
+              width: 18px;
+              height: 18px;
+              background-color: $c_yellow;
+              color: white;
+              font-family: 'icomoon';
+              @include border-radius(18px);
+              font-size: 1.3rem;
+              padding: 1px 2px;
+              margin: 2px 10px 0 0;
+
+              @include range-width(0, 650px) {
+                width: 13px;
+                height: 13px;
+                @include border-radius(13px);
+                font-size: .9rem;
+                margin: 0 5px 0 0;
+                padding: 0 1px 1px 1px;
+              }
+            }
+          }
+
+          .pat_mode_r {
+            display: inline-block;
+            margin: 10px 0 0 5px;
+            color: red;
+            font-size: 1.2rem;
+            border: 1px solid red;
+            font-weight: 600;
+            padding: 3px 10px;
+          }
+
+          .pat_mode_g {
+            display: inline-block;
+            margin: 10px 0 0 5px;
+            color: $c_green;
+            font-size: 1.2rem;
+            border: 1px solid $c_green;
+            font-weight: 600;
+            padding: 3px 10px;
+          }
+        }
+
+        .path_cent_boxs {
+          display: inline-block;
+          width: calc(100% - 120px - 15px);
+          float: left;
+          text-align: left;
+
+          @include range-width(0, 650px) {
+            width: 100%;
+            padding-top: 10px;
+          }
+
+          a {
+            display: inline-block;
+            cursor: pointer;
+            padding: 0;
+            font-size: 1.8rem;
+            color: $c_dgrey;
+            text-decoration: none;
+            line-height: 2.8rem;
+            @include transition(color .3s); 
+
+            &:hover, &:active {
+              color: $c_green;
+              text-decoration: underline;
+            }
+
+            @include range-width(0, 650px) {
+              font-size: 1.3rem;
+              line-height: 1.8rem;
+            }
+          }
+        }
+      }
+    }
+
+    .path_number_boxs {
+      display: inline-block;
+      width: 100%;
+      @include clearfix();
+
+      .path_number_box {
+        display: inline-block;
+        float: right;
+        margin: 30px 0;
+        @include clearfix();
+
+        @include range-width(0, 690px) {
+          width: 100%;
+          margin: 0 auto;
+          float: none;
+          padding: 25px 15px 60px 15px;
+        }
+
+        .path_nl, .path_nr {
+          display: inline-block;
+          cursor: pointer;
+          margin: 0;
+          padding: 0;
+          width: 30px;
+          height: 30px;
+          float: left;
+
+          &:before {
+            display: inline-block;
+            font-family: 'icomoon';
+            color: $c_yellow;
+            font-size: 1.5rem;
+            line-height: 30px;
+
+            @include range-width(0, 690px) {
+              font-size: 1.2rem;
+            }
+          } 
+
+          &:hover, &:active {
+            &:before {
+              color: rgba(251, 209, 21, .7);
+            }
+          }
+
+          @include range-width(0, 690px) {
+            width: 25px;
+            height: 25px;
+
+            &:before {
+              font-size: 1rem;
+              line-height: 25px;
+            }
+          }
+        }
+
+        .path_nl {
+          margin-right: 10px;
+
+          &:before {
+            content: '\e906';
+          }
+        }
+        .path_nr {
+          margin-left: 10px;
+
+          &:before {
+            content: '\e907';
+          }
+        }
+
+        > div {
+          display: inline-block;
+          float: left;
+
+          + div {
+            margin-left: 10px;
+
+            @include range-width(0, 690px) {
+              margin-left: 5px;
+            }
+          }
+
+          &.path_np {
+            cursor: pointer;
+            background-color: rgba(139, 139, 139, 1.00);
+            color: white;
+            height: 30px;
+            line-height: 30px;
+            padding: 0 10px; 
+            font-size: 1.2rem;
+            @include transition(background-color .3s);
+
+            &:hover, &:active {
+              background-color: rgba(139, 139, 139, .8);
+            }
+
+            @include range-width(0, 690px) {
+              line-height: 25px;
+              height: 25px;
+              font-size: 1rem;
+            }
+          }
+
+          &.path_nn {
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            background-color: rgba(232, 232, 232, 1.00);
+            color: $c_dgrey;
+            font-size: 1.2rem;
+            line-height: 30px;
+            @include transition(color .3s, background-color .3s);
+
+            &:hover, &:active {
+              background-color: $c_yellow;
+              color: white;
+            }
+
+            &.path_ca {
+              background-color: $c_yellow;
+              color: white;
+            }
+
+            @include range-width(0, 690px) {
+              width: 25px;
+              height: 25px;
+              font-size: 1rem;
+
+              &:nth-child(n + 6) {
+                display: none;
+              }
+            }
+          }
+        } 
+      }
+    }
 
   }
 }

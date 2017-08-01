@@ -50,6 +50,12 @@ html {
 }
 
 
+.icon-nl:before {
+  content: "\e906";
+}
+.icon-nr:before {
+  content: "\e907";
+}
 .icon-close:before {
   content: "\e5cd";
 }
@@ -319,6 +325,11 @@ $allwidth: 1000px;
           font-weight: 600;
           background-color: $c_yellow;
         }
+
+        &.in_nav_ac {
+          font-weight: 600;
+          background-color: $c_yellow;
+        }
       }
     }
   }
@@ -335,7 +346,7 @@ $allwidth: 1000px;
   position: fixed;
   top: 0;
   right: -240px;
-  z-index: 3;
+  z-index: 6;
   @include opacity(0);
   @include transition(right .3s, opacity .3s);
   
@@ -608,9 +619,11 @@ $allwidth: 1000px;
     }
   }
 }
+
 .main_banner {
   max-width: 1300px;
 }
+
 #middle_boxs {
   display: inline-block;
   width: 100%;
@@ -624,6 +637,10 @@ $allwidth: 1000px;
 
     @include range-width(0, 430px) {
       padding: 20px 15px;
+    }
+
+    &.m_no_spac {
+      padding: 0;
     }
   
     .m_l_boxs, .m_r_boxs {

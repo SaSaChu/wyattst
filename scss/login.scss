@@ -163,7 +163,12 @@ $c_yellow: rgba(251, 209, 21, 1.00);
         background-color: rgba(230, 135, 8, 1.00);
         padding: 15px 0;
         color: white;
-        
+        @include transition(background-color .3s);
+
+        &:hover, &:active {
+          background-color: rgba(230, 135, 8, .8);
+        }
+
         @include range-width(0, 400px) {
           padding: 10px 0;
         }
