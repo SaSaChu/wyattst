@@ -56,115 +56,218 @@ $c_lgrey: rgba(243, 243, 243, 1.00);
 $c_dgrey: rgba(43, 43, 43, 1.00);
 $c_green: rgba(0, 148, 139, 1.00);
 
-
-.photo_boxs {
+// list
+.pbb {
   display: inline-block;
-  width: calc(100% / 3 - 35px * 2 / 3);
-  float: left;
-  text-align: left;
+  width: 100%;
+  padding: 0 20px;
 
   @include range-width(0, 650px) {
-    width: calc(100% / 2 - 20px / 2);
-
-    &:nth-child(2n + 1) {
-      margin-right: 10px;
-      float: left;
-    }
-
-    &:nth-child(2n + 2) {
-      margin-left: 10px;
-      float: right;
-    }
-
-    &:nth-child(n + 11) {
-      display: none;
-    }
+    padding: 0 15px;
   }
 
-  &:nth-child(3n + 2) {
-    margin: 0 35px;
-
-    @include range-width(0, 650px) {
-      margin: 0;
-    }
-  }
-
-  &:nth-child(n + 4) {
-    margin-top: 35px;
-
-    @include range-width(0, 650px) {
-      margin-top: 0;
-    }
-  }
-
-  .photo_box {
+  .photo_boxs {
     display: inline-block;
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    height: 200px;
+    width: calc(100% / 3 - 35px * 2 / 3);
+    float: left;
+    text-align: left;
 
     @include range-width(0, 650px) {
-      height: 100px;
+      width: calc(100% / 2 - 20px / 2);
+
+      &:nth-child(2n + 1) {
+        margin-right: 10px;
+        float: left;
+      }
+
+      &:nth-child(2n + 2) {
+        margin-left: 10px;
+        float: right;
+      }
+
+      &:nth-child(n + 11) {
+        display: none;
+      }
     }
 
-    .photo_link {
+    &:nth-child(3n + 2) {
+      margin: 0 35px;
+
+      @include range-width(0, 650px) {
+        margin: 0;
+      }
+    }
+
+    &:nth-child(n + 4) {
+      margin-top: 35px;
+
+      @include range-width(0, 650px) {
+        margin-top: 0;
+      }
+    }
+
+    .photo_box {
       display: inline-block;
-      cursor: pointer;
-      position: absolute;
-      top: 0;
-      left: 0;
+      position: relative;
       width: 100%;
+      max-width: 100%;
       height: 200px;
-      border-bottom: 10px solid rgba(251, 209, 21, .7);
-      background-color: rgba(43, 43, 43, .3);
-      @include transition(background-color .3s);
+
+      @include range-width(0, 650px) {
+        height: 100px;
+      }
+
+      &.pd_c {
+        @include range-width(0, 650px) {
+          margin-bottom: 20px;
+        }
+      }
+
+      .photo_link {
+        display: inline-block;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        border-bottom: 10px solid rgba(251, 209, 21, .7);
+        background-color: rgba(43, 43, 43, .3);
+        @include transition(background-color .3s);
+
+        &:hover, &:active {
+          background-color: rgba(43, 43, 43, 0);
+        }
+
+        @include range-width(0, 650px) {
+          height: 100px;
+        }
+
+        &.nb {
+          border: 0;
+        }
+      }
+
+      .photo {
+        display: inline-block;
+        width: 100%;
+        height: 200px;
+
+        @include range-width(0, 650px) {
+          height: 100px;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .photo_title {
+      display: inline-block;
+      width: 100%;
+      color: $c_dgrey;
+      font-size: 2rem;
+      cursor: pointer;
+      padding-top: 20px;
+      text-decoration: none;
+      @include transition(color .3s, text-decoration .3s);
+
+      @include range-width(0, 650px) {
+        font-size: 1rem;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
 
       &:hover, &:active {
-        background-color: rgba(43, 43, 43, 0);
-      }
-
-      @include range-width(0, 650px) {
-        height: 100px;
-      }
-    }
-
-    .photo {
-      display: inline-block;
-      width: 100%;
-      height: 200px;
-
-      @include range-width(0, 650px) {
-        height: 100px;
-      }
-
-      img {
-        width: 100%;
+        color: $c_green;
+        text-decoration: underline;
       }
     }
   }
 
-  .photo_title {
+}
+
+
+
+// detailed
+.photo_de_boxs {
+  display: inline-block;
+  width: 100%;
+  padding: 0 20px;
+  margin-bottom: 50px;
+  @include clearfix();
+
+  @include range-width(0, 690px) {
+    padding: 0 15px;
+    margin-bottom: 25px;
+  }
+
+  > div {
     display: inline-block;
     width: 100%;
-    color: $c_dgrey;
-    font-size: 2rem;
-    cursor: pointer;
-    padding-top: 20px;
-    text-decoration: none;
-    @include transition(color .3s, text-decoration .3s);
 
-    @include range-width(0, 650px) {
-      font-size: 1rem;
-      padding-top: 10px;
-      padding-bottom: 10px;
+    a {
+      display: inline-block;
+      width: 100px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 1.3rem;
+      color: $c_dgrey;
+      @include transition(color .3s);
+      @include clearfix();
+
+      &.photo_list {
+        float: right;
+
+        &:before {
+          display: inline-block;
+          content: '\e906';
+          font-family: 'icomoon';
+          font-size: 1.2rem;
+          margin-top: 3px;
+          margin-right: 5px;
+          color: $c_yellow;
+
+          @include range-width(0, 690px) {
+            font-size: 1rem;
+          }
+        }
+
+        @include range-width(0, 690px) {
+          text-align: left;
+        }
+      }
+
+      &:hover, &:active {
+        color: $c_green;
+      }
+
+      @include range-width(0, 690px) {
+        width: 100%;
+        padding-bottom: 15px;
+        font-size: 1rem;
+      }
     }
 
-    &:hover, &:active {
+    p {
+      display: inline-block;
+      width: calc(100% - 100px);
+      padding: 0;
+      margin: 0; 
+      text-align: left;
+      font-size: 2.5rem;
       color: $c_green;
       text-decoration: underline;
+      font-weight: 600;
+
+      @include range-width(0, 650px) {
+        width: 100%;
+        font-size: 1.3rem;
+      }
     }
   }
+  
 }
 
 
