@@ -131,32 +131,55 @@ $c_green: rgba(0, 148, 139, 1.00);
       z-index: 2;
 
       @include range-width(0, 650px) {
-        padding: 15px 0;
+        padding: 15px 0 0 0;
       }
 
       @include clearfix();
-      
-      .logo {
-        display: inline-block;
-        cursor: pointer;
-        float: left;
-        border: 0;
-        outline: 0;
-        text-align: left;
 
-        @include range-width(0, 650px) {
-          width: calc(100% - 50px);
+      .logo_boxs {
+        display: inline-block;
+        width: calc(100% - 330px);
+        float: left;
+
+        .logo_s, .logo_b {
+          display: block;
+          cursor: pointer;
+          border: 0;
+          outline: 0;
+          text-align: left;
         }
 
-        img {
-          width: 100%;
-          max-width: 100%;
+        .logo_s {
+          width: 176px;
+          height: 15px;
+          margin-bottom: 10px;
+          
+          img {
+            width: 100%;
+            max-width: 100%;
+          }
 
           @include range-width(0, 650px) {
-            width: 160px
+            width: 120px;
+          }
+        }
+
+        .logo_b {
+          width: 254px;
+          height: 38px;
+
+          img {
+            width: 100%;
+            max-width: 100%;
+          }
+
+          @include range-width(0, 650px) {
+            width: 170px;
           }
         }
       }
+      
+      
 
       .search_boxs {
         display: inline-block;
@@ -367,22 +390,52 @@ $c_green: rgba(0, 148, 139, 1.00);
     position: relative;
     display: inline-block;
     width: 100%;
-    height: 72px;
-    padding: 15px 10px;
+    // height: 72px;
+    padding: 15px 10px 0 10px;
 
-    .m_logo {
+    .m_logo_box {
       display: inline-block;
-      cursor: pointer;
-      float: left;
-      border: 0;
-      outline: 0;
-      text-align: left;
+      width: calc(100% - 40px);
       position: relative;
       z-index: 5;
 
-      img {
-        width: 160px
+      .m_logo_s, .m_logo_b {
+        display: block;
+        cursor: pointer;
+        border: 0;
+        outline: 0;
+        text-align: left;
       }
+
+      .m_logo_s {
+        width: 176px;
+        height: 15px;
+        margin-bottom: 10px;
+        
+        img {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        @include range-width(0, 650px) {
+          width: 120px;
+        }
+      }
+
+      .m_logo_b {
+        width: 254px;
+        height: 38px;
+
+        img {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        @include range-width(0, 650px) {
+          width: 170px;
+        }
+      }
+
     }
 
     .moble_close_icon {
@@ -934,7 +987,7 @@ $c_green: rgba(0, 148, 139, 1.00);
   // display: none;
   position: fixed;
   right: 50px;
-  bottom: 30px;    
+  bottom: 75px;    
   padding: 10px 15px;    
   background-color: $c_yellow;
   width: 60px;
@@ -946,7 +999,7 @@ $c_green: rgba(0, 148, 139, 1.00);
     width: 50px;
     height: 50px;
     right: 14px;
-    bottom: 25px;
+    bottom: 115px;
     padding: 8px 11px; 
   }
   

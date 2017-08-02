@@ -13,6 +13,7 @@
 
     <link href="css/public.css" rel="stylesheet" type="text/css" />
     <link href="css/list.css" rel="stylesheet" type="text/css" />
+    <link href="css/table.css" rel="stylesheet" type="text/css" />
 
     <script src="js/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" ></script>
     <script src="js/public.js" language="javascript" type="text/javascript" ></script>
@@ -50,11 +51,11 @@
         <div class='nav_box'>
           <div><a href='111.html'>社區公告</a></div>
           <div><a href='211.html'>會議記錄</a></div>
-          <div class='in_nav_ac'><a href='311.html'>財務報表</a></div>
+          <div><a href='311.html'>財務報表</a></div>
           <div><a href='411.html'>相簿</a></div>
           <div><a href='511.html'>行事曆</a></div>
           <div><a href='611.html'>工作追蹤</a></div>
-          <div><a href='711.html'>巡邏紀錄</a></div>
+          <div class='in_nav_ac'><a href='711.html'>巡邏紀錄</a></div>
           <div><a href='811.html'>其他資料</a></div>
         </div>
       </div>
@@ -92,14 +93,14 @@
     <div class='grey_boxs'>
       <div class='grey_box'>
         <div class='path'><a href='index.html' class='pa_be_ac'>首頁</a></div>
-        <div class='path'><a href='311.html'>財務報表</a></div>
+        <div class='path'><a href='711.html'>巡邏紀錄</a></div>
       </div>
     </div>
 
     <div id='middle_boxs'>
       <div class='middle_box m_no_spac'>
-        <div class='path_banner_boxs path_pic_c'>
-          <div class='path_title'>財務報表</div>
+        <div class='path_banner_boxs path_pic_g'>
+          <div class='path_title'>巡邏紀錄</div>
         </div>
 
         <div class='path_search_boxs'>
@@ -128,6 +129,18 @@
               </label>
             </div>
 
+            <div class='path_form_boxs path_work'>
+              <div class='path_term'>查詢日期</div>
+              <label class='path_label'>
+                <select name="month">
+                　<option value="1日">1日</option>
+                　<option value="2日">2日</option>
+                　<option value="3日">3日</option>
+                　<option value="4日">4日</option>
+                </select>
+              </label>
+            </div>
+
             <button>搜尋</button>
 
           </div>
@@ -142,49 +155,58 @@
         </div>
 
         <div class='path_cent_boxs'>
-          <div class='path_table'>
-            <div class='path_date_boxs'>
-              <div class='path_date'>2017.01.01</div>
-            </div>
-            <div class='path_cent_boxs'>
-              <a href='311_d.html'>轉知「社團法人中華民國躍愛全人關懷協會-2017年台灣巡迴反毒公益演唱會」請各社福單位協助宣傳並參加。</a>
-            </div>
-          </div>
-          
-          <div class='path_table'>
-            <div class='path_date_boxs'>
-              <div class='path_date'>2017.01.01</div>
-            </div>
-            <div class='path_cent_boxs'>
-              <a href='311_d.html'>轉知「社團法人中華民國躍愛全人關懷協會-2017年台灣巡迴反毒公益演唱會」請各社福單位協助宣傳並參加。</a>
-            </div>
-          </div>
+          <div class='table'>
+            <div class='m_t_title'>巡邏紀錄</div>
 
-          <div class='path_table'>
-            <div class='path_date_boxs'>
-              <div class='path_date'>2017.01.01</div>
+            <div class='tr'>
+              <div class='td' title='巡邏點'><a href='711_d.html'>地下停車場北側</a></div>
+              <div class='td' title='保全人員'><p>林森海</p></div>
+              <div class='td' title='巡邏時間'><p>2017.01.01 14:14:03</p></div>
+              <div class='td' title='狀態'><p>欄位 1-4</p></div>
             </div>
-            <div class='path_cent_boxs'>
-              <a href='311_d.html'>轉知「社團法人中華民國躍愛全人關懷協會-2017年台灣巡迴反毒公益演唱會」請各社福單位協助宣傳並參加。</a>
-            </div>
-          </div>
 
-          <div class='path_table'>
-            <div class='path_date_boxs'>
-              <div class='path_date'>2017.01.01</div>
+            <div class='tr'>
+              <div class='td' title='巡邏點'><a href='711_d.html'>地下停車場北側</a></div>
+              <div class='td' title='保全人員'><p>林森海</p></div>
+              <div class='td' title='巡邏時間'><p>2017.01.01 14:14:03</p></div>
+              <div class='td' title='狀態'><p>欄位 2-4</p></div>
             </div>
-            <div class='path_cent_boxs'>
-              <a href='311_d.html'>轉知「社團法人中華民國躍愛全人關懷協會-2017年台灣巡迴反毒公益演唱會」請各社福單位協助宣傳並參加。</a>
-            </div>
-          </div>
 
-          <div class='path_table'>
-            <div class='path_date_boxs'>
-              <div class='path_date'>2017.01.01</div>
+            <div class='tr'>
+              <div class='td' title='巡邏點'><a href='711_d.html'>地下停車場北側</a></div>
+              <div class='td' title='保全人員'><p>林森海</p></div>
+              <div class='td' title='巡邏時間'><p>2017.01.01 14:14:03</p></div>
+              <div class='td' title='狀態'><p>欄位 3-4</p></div>
             </div>
-            <div class='path_cent_boxs'>
-              <a href='311_d.html'>轉知「社團法人中華民國躍愛全人關懷協會-2017年台灣巡迴反毒公益演唱會」請各社福單位協助宣傳並參加。</a>
+
+            <div class='tr'>
+              <div class='td' title='巡邏點'><a href='711_d.html'>地下停車場北側</a></div>
+              <div class='td' title='保全人員'><p>林森海</p></div>
+              <div class='td' title='巡邏時間'><p>2017.01.01 14:14:03</p></div>
+              <div class='td' title='狀態'><p>欄位 4-4</p></div>
             </div>
+
+            <div class='tr'>
+              <div class='td' title='巡邏點'><a href='711_d.html'>地下停車場北側</a></div>
+              <div class='td' title='保全人員'><p>林森海</p></div>
+              <div class='td' title='巡邏時間'><p>2017.01.01 14:14:03</p></div>
+              <div class='td' title='狀態'><p>欄位 5-4</p></div>
+            </div>
+
+            <div class='tr'>
+              <div class='td' title='巡邏點'><a href='711_d.html'>地下停車場北側</a></div>
+              <div class='td' title='保全人員'><p>林森海</p></div>
+              <div class='td' title='巡邏時間'><p>2017.01.01 14:14:03</p></div>
+              <div class='td' title='狀態'><p>欄位 6-4</p></div>
+            </div>
+
+            <div class='tr'>
+              <div class='td' title='巡邏點'><a href='711_d.html'>地下停車場北側</a></div>
+              <div class='td' title='保全人員'><p>林森海</p></div>
+              <div class='td' title='巡邏時間'><p>2017.01.01 14:14:03</p></div>
+              <div class='td' title='狀態'><p>欄位 7-4</p></div>
+            </div>
+
           </div>
 
         </div>
