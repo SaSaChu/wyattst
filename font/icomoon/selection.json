@@ -106,6 +106,88 @@
     {
       "icon": {
         "paths": [
+          "M0 448v128h512v-128h-512z"
+        ],
+        "width": 512,
+        "attrs": [],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "dash"
+        ],
+        "defaultCode": 61642,
+        "grid": 16
+      },
+      "attrs": [],
+      "properties": {
+        "id": 38,
+        "order": 19,
+        "prevSize": 32,
+        "code": 61642,
+        "name": "dash"
+      },
+      "setIdx": 5,
+      "setId": 12,
+      "iconIdx": 37
+    },
+    {
+      "icon": {
+        "paths": [
+          "M384 448v-256h-128v256h-256v128h256v256h128v-256h256v-128h-256z"
+        ],
+        "width": 640,
+        "attrs": [],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "plus"
+        ],
+        "defaultCode": 61533,
+        "grid": 16
+      },
+      "attrs": [],
+      "properties": {
+        "id": 132,
+        "order": 18,
+        "prevSize": 32,
+        "code": 61533,
+        "name": "plus"
+      },
+      "setIdx": 5,
+      "setId": 12,
+      "iconIdx": 131
+    },
+    {
+      "icon": {
+        "paths": [
+          "M1024 608l-192-192v-288h-128v160l-192-192-512 512v32h128v320h320v-192h128v192h320v-320h128z"
+        ],
+        "attrs": [],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "home",
+          "house"
+        ],
+        "defaultCode": 59650,
+        "grid": 16
+      },
+      "attrs": [],
+      "properties": {
+        "ligatures": "home3, house3",
+        "name": "home3",
+        "id": 2,
+        "order": 7,
+        "prevSize": 32,
+        "code": 59653
+      },
+      "setIdx": 10,
+      "setId": 7,
+      "iconIdx": 2
+    },
+    {
+      "icon": {
+        "paths": [
           "M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
         ],
         "attrs": [],
@@ -256,34 +338,6 @@
       "setIdx": 15,
       "setId": 2,
       "iconIdx": 35
-    },
-    {
-      "icon": {
-        "paths": [
-          "M1024 608l-192-192v-288h-128v160l-192-192-512 512v32h128v320h320v-192h128v192h320v-320h128z"
-        ],
-        "attrs": [],
-        "isMulticolor": false,
-        "isMulticolor2": false,
-        "tags": [
-          "home",
-          "house"
-        ],
-        "defaultCode": 59650,
-        "grid": 16
-      },
-      "attrs": [],
-      "properties": {
-        "ligatures": "home3, house3",
-        "name": "home3",
-        "id": 2,
-        "order": 7,
-        "prevSize": 32,
-        "code": 59653
-      },
-      "setIdx": 10,
-      "setId": 7,
-      "iconIdx": 2
     },
     {
       "icon": {

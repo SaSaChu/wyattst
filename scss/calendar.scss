@@ -1,0 +1,190 @@
+/**
+ * @author      ZEUS Design - http://www.zeusdesign.com.tw
+ * @copyright   Copyright (c) 2016 ZEUS Design
+ */
+
+@import "_oa";
+
+@include font-face("Monaco", font-files("monaco/monaco.ttf", "monaco/monaco.otf"));
+@include font-face("icomoon", font-files("icomoon/icomoon.eot", "icomoon/icomoon.woff", "icomoon/icomoon.ttf", "icomoon/icomoon.svg"));
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  @include font-smoothing(antialiased);
+}
+
+* {
+  &, &:after, &:before {
+    vertical-align: top;
+    @include box-sizing(border-box);
+    @include selection(rgba(150, 200, 255, 1), rgba(255, 255, 255, 1));
+    @include font-smoothing(antialiased);
+  }
+}
+
+html {
+  height: 100%;
+  font-size: 75%; /* 16px*75%=12px */
+
+  body {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;  /* 1*12px=12px */
+    font-family: "Roboto", "微軟正黑體", Monaco, "Microsoft JhengHei" ;
+    background-color: rgba(255, 255, 255, 1.00);
+    color: rgba(43, 43, 43, 1.00);
+
+    @include font-smoothing(antialiased);
+
+  }
+}
+
+
+$c_yellow: rgba(251, 209, 21, 1.00);
+$allwidth: 1000px;
+$c_lgrey: rgba(243, 243, 243, 1.00);
+$c_dgrey: rgba(43, 43, 43, 1.00);
+$c_green: rgba(0, 148, 139, 1.00);
+
+
+.calendar_boxs {
+  display: inline-block;
+  width: 100%;
+  background-color: rgba(235, 235, 235, 1.00);
+  border-left: 10px solid $c_yellow;
+  padding: 20px 0;
+  margin-bottom: 3px;
+  text-align: left;
+
+  .c_date, .c_icon {
+    display: inline-block;
+    cursor: pointer;
+    color: $c_dgrey;
+    font-size: 2rem;
+    font-weight: 600;
+    @include transition(color .3s);
+
+    &:hover, &:active {
+      color: $c_yellow;
+    }
+  }
+
+  .c_date {
+    width: calc(100% - 40px);
+    
+    padding-left: 15px;
+  }
+
+  .c_icon {
+    width: 35px;
+    height: 35px;
+    font-size: 2rem;
+    padding-top: 5px;
+  }
+}
+
+
+.cd_boxs {
+  display: inline-block;
+  width: 100%;
+
+  .cd_box {
+    display: inline-block;
+    width: 100%;
+    padding: 30px 20px;
+    background-color: white;
+    text-align: left;
+    
+    &:nth-child(2n + 2) {
+      background-color: rgba(235, 235, 235, .7);
+    }
+
+    &:last-child {
+      margin-bottom: 20px;
+    }
+
+    .cd_time {
+      display: inline-block;
+      width: 90px;
+      color: $c_dgrey;
+      font-size: 1.5rem;
+      line-height: 3.5rem;
+    }
+
+    .cd_cent {
+      display: inline-block;
+      width: calc(100% - 100px);
+
+      .cd_cent_title {
+        display: inline-block;
+        width: 100%;
+        font-size: 2.5rem;
+        color: $c_green;
+        margin: 0;
+        padding: 0;
+
+        &:before {
+          display: inline-block;
+          content: '\e902';
+          font-family: 'icomoon';
+          font-size: 1.2rem;
+          width: 20px;
+          height: 20px;
+          color: white;
+          background-color: $c_yellow;
+          @include border-radius(10px);
+          padding: 2px 3px;
+          margin-top: 10px;
+          margin-right: 10px;
+        }
+      }
+
+      .cd_cent_article {
+        display: inline-block;
+        width: 100%;
+        padding-left: 30px;
+        margin: 35px 0;
+        font-size: 2rem;
+        color: $c_dgrey;
+      }
+
+      .cd_cent_pic {
+        display: inline-block;
+        min-width: 100%;
+        padding-left: 30px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

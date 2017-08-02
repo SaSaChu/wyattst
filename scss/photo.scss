@@ -271,6 +271,32 @@ $c_green: rgba(0, 148, 139, 1.00);
 }
 
 
+.blackbg_boxs {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 101%;
+  padding-top: 150px;
+  top: 463px;
+  left: 0;
+  background-color: rgba(43, 43, 43, .6);
+
+  .photo_arrow {
+    display: inline-block;
+    width: calc(100% - 1000px );
+    // .p_left {}
+    // .p_right {}
+  }
+
+  .bigphoto {
+    display: inline-block;
+    width: 100%;
+    max-width: $allwidth;
+    margin: 0 auto;
+  }
+}
+
+
 
 
 
