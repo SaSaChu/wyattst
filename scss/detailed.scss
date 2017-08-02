@@ -198,6 +198,51 @@ $c_green: rgba(0, 148, 139, 1.00);
     padding: 0 15px;
   }
 
+  .check_boxs {
+    display: inline-block;
+    width: 100%;
+    @include clearfix();
+    padding-bottom: 70px;
+
+    @include range-width(0, 650px) {
+      padding-bottom: 25px;
+    }
+
+    .check_title, .check_people {
+      display: inline-block;
+      width: 50%;
+      padding: 0;
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .check_title {
+      float: left;
+      color: $c_green;
+
+      @include range-width(0, 650px) {
+        font-size: 1.3rem;
+        width: 100%;
+      }
+    }
+
+    .check_people {
+      float: right;
+      text-align: right;
+      color: $c_dgrey;
+
+      @include range-width(0, 650px) {
+        font-size: 1rem;
+        width: 100%;
+        float: left;
+        text-align: left;
+        padding-bottom: 10px;
+      }
+
+    }
+  }
+
   .date_title, .date_article {
     display: inline-block;
     width: 100%;
