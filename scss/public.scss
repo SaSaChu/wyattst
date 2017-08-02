@@ -702,6 +702,14 @@ $c_green: rgba(0, 148, 139, 1.00);
     &.m_no_spac {
       padding: 0;
     }
+
+    &.p_no_spac {
+      padding: 0 20px;
+
+      @include range-width(0, 650px) {
+        padding: 0 15px;
+      }
+    }
   
     .m_l_boxs, .m_r_boxs {
       display: inline-block;
