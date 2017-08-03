@@ -143,7 +143,7 @@ $c_green: rgba(0, 148, 139, 1.00);
 
       .logo_boxs {
         display: inline-block;
-        width: calc(100% - 330px);
+        width: calc(100% - 465px);
         float: left;
 
         .logo_s, .logo_b {
@@ -188,7 +188,7 @@ $c_green: rgba(0, 148, 139, 1.00);
 
       .search_boxs {
         display: inline-block;
-        float: right;
+        float: left;
         width: 315px;
         text-align: left;
         padding-top: 25px;
@@ -252,6 +252,36 @@ $c_green: rgba(0, 148, 139, 1.00);
               }
             }
 
+          }
+        }
+      }
+
+
+      .login_boxs {
+        display: inline-block;
+        float: left;
+        width: 150px;
+        padding-left: 30px;
+        padding-top: 25px;
+
+        @include range-width(0, 650px) {
+          display: none;
+        }
+        
+        .login_a {
+          display: inline-block;
+          width: 120px;
+          cursor: pointer;
+          background-color: rgba(230, 135, 8, 1.00);
+          padding: 8px 0;
+          font-size: 1.3rem;
+          font-weight: bolder;
+          color: white;
+          text-decoration: none;
+          @include transition(background-color .3s);
+
+          &:hover, &:active {
+            background-color: rgba(230, 135, 8, .7);
           }
         }
       }
@@ -559,6 +589,17 @@ $c_green: rgba(0, 148, 139, 1.00);
       color: black;
       font-size: 1.4rem;
       text-decoration: none;
+
+      &.m_login_a {
+        display: inline-block;
+        width: 100%;
+        background-color: rgba(230, 135, 8, 1.00);
+        padding: 10px 0;
+        color: white;
+        font-size: 1.3rem;
+        font-weight: bolder;
+        text-align: center; 
+      }
     }
 
     &:hover, &:active {
