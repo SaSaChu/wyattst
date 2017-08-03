@@ -16,7 +16,7 @@ $(function() {
   });
 
 
-  $(".banner .item, .photo").imgLiquid ();
+  $(".banner .item, .photo, .path_pic").imgLiquid ();
 
 
   $('.banner').each (function () {

@@ -32,9 +32,9 @@ $c_green: rgba(0, 148, 139, 1.00);
     margin-bottom: 3px;
     text-align: left;
 
-    // @include range-width(0, 650px) {
-    //   margin: 0 15px;
-    // }
+    @include range-width(0, 650px) {
+      padding: 5px 0;      
+    }
 
     .c_date, .c_icon {
       display: inline-block;
@@ -47,11 +47,15 @@ $c_green: rgba(0, 148, 139, 1.00);
       &:hover, &:active {
         color: $c_yellow;
       }
+
+      @include range-width(0, 650px) {
+        font-size: 1.3rem;
+        line-height: 35px;
+      }
     }
 
     .c_date {
       width: calc(100% - 40px);
-      
       padding-left: 15px;
     }
 
@@ -60,9 +64,9 @@ $c_green: rgba(0, 148, 139, 1.00);
       height: 35px;
       font-size: 2rem;
       padding-top: 5px;
+
       &:before {
         content: "\f05d";
-
         font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
         speak: none;
         font-style: normal;
@@ -74,6 +78,7 @@ $c_green: rgba(0, 148, 139, 1.00);
         @include font-smoothing(antialiased);
       }
     }
+
     &.show {
       .c_icon {
         &:before {
