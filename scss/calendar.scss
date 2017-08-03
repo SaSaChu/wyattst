@@ -104,13 +104,35 @@ $c_green: rgba(0, 148, 139, 1.00);
       height: 35px;
       font-size: 2rem;
       padding-top: 5px;
+      &:before {
+        content: "\f05d";
+
+        font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        @include font-smoothing(antialiased);
+      }
+    }
+    &.show {
+      .c_icon {
+        &:before {
+          content: "\f0ca";
+        }
+      }
     }
   }
 
 
   .cd_boxs {
-    display: inline-block;
-    width: 100%;
+    display: block;
+    overflow: hidden;
+    @include transition(height .3s);
+    
 
     // @include range-width(0, 650px) {
     //   margin: 0 15px;
