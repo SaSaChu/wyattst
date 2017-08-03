@@ -612,8 +612,17 @@ $c_green: rgba(0, 148, 139, 1.00);
       @include range-width(0, 650px) {
         right: 5px;
       }
-
     }
+
+    &.right_s {
+      right: 0;
+      
+      @include range-width(0, 650px) {
+        right: 9px;
+        text-align: right;
+      }
+    }
+
     &:hover, &:active {
       color: $c_yellow;
     }

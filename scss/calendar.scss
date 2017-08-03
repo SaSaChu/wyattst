@@ -57,83 +57,105 @@ $c_dgrey: rgba(43, 43, 43, 1.00);
 $c_green: rgba(0, 148, 139, 1.00);
 
 
-.calendar_boxs {
-  display: inline-block;
-  width: 100%;
-  background-color: rgba(235, 235, 235, 1.00);
-  border-left: 10px solid $c_yellow;
-  padding: 20px 0;
-  margin-bottom: 3px;
-  text-align: left;
-
-  .c_date, .c_icon {
-    display: inline-block;
-    cursor: pointer;
-    color: $c_dgrey;
-    font-size: 2rem;
-    font-weight: 600;
-    @include transition(color .3s);
-
-    &:hover, &:active {
-      color: $c_yellow;
-    }
-  }
-
-  .c_date {
-    width: calc(100% - 40px);
-    
-    padding-left: 15px;
-  }
-
-  .c_icon {
-    width: 35px;
-    height: 35px;
-    font-size: 2rem;
-    padding-top: 5px;
-  }
-}
 
 
-.cd_boxs {
+.calendar_cent_boxs {
   display: inline-block;
   width: 100%;
 
-  .cd_box {
+  @include range-width(0, 650px) {
+    padding: 0 15px;
+  }
+
+  .calendar_boxs {
     display: inline-block;
     width: 100%;
-    padding: 30px 20px;
-    background-color: white;
+    background-color: rgba(235, 235, 235, 1.00);
+    border-left: 10px solid $c_yellow;
+    padding: 20px 0;
+    margin-bottom: 3px;
     text-align: left;
-    
-    &:nth-child(2n + 2) {
-      background-color: rgba(235, 235, 235, .7);
-    }
 
-    &:last-child {
-      margin-bottom: 20px;
-    }
+    // @include range-width(0, 650px) {
+    //   margin: 0 15px;
+    // }
 
-    .cd_time {
+    .c_date, .c_icon {
       display: inline-block;
-      width: 90px;
+      cursor: pointer;
       color: $c_dgrey;
-      font-size: 1.5rem;
-      line-height: 3.5rem;
+      font-size: 2rem;
+      font-weight: 600;
+      @include transition(color .3s);
+
+      &:hover, &:active {
+        color: $c_yellow;
+      }
     }
 
-    .cd_cent {
+    .c_date {
+      width: calc(100% - 40px);
+      
+      padding-left: 15px;
+    }
+
+    .c_icon {
+      width: 35px;
+      height: 35px;
+      font-size: 2rem;
+      padding-top: 5px;
+    }
+  }
+
+
+  .cd_boxs {
+    display: inline-block;
+    width: 100%;
+
+    // @include range-width(0, 650px) {
+    //   margin: 0 15px;
+    // }
+
+    .cd_box {
       display: inline-block;
-      width: calc(100% - 100px);
+      width: 100%;
+      padding: 30px 20px;
+      background-color: white;
+      text-align: left;
 
-      .cd_cent_title {
+      @include range-width(0, 650px) {
+        padding: 10px 0;
+      }
+      
+      &:nth-child(2n + 2) {
+        background-color: rgba(235, 235, 235, .7);
+      }
+
+      &:last-child {
+        margin-bottom: 20px;
+      }
+
+      .cd_time {
         display: inline-block;
-        width: 100%;
-        font-size: 2.5rem;
-        color: $c_green;
-        margin: 0;
-        padding: 0;
+        width: 120px;
+        color: $c_dgrey;
+        font-size: 1.5rem;
+        line-height: 3.5rem;
 
-        &:before {
+        @include range-width(0, 650px) {
+          font-size: 1rem;
+          padding-left: 5px;
+          width: 100px;
+        }
+
+        &.no_a {
+
+          &:after, &:before {
+            display: none;
+          }
+        }
+
+        &:after {
           display: inline-block;
           content: '\e902';
           font-family: 'icomoon';
@@ -143,32 +165,89 @@ $c_green: rgba(0, 148, 139, 1.00);
           color: white;
           background-color: $c_yellow;
           @include border-radius(10px);
-          padding: 2px 3px;
+          padding: 9px 3px;
           margin-top: 10px;
-          margin-right: 10px;
+          margin-left: 10px;
+          line-height: 0;
+
+          @include range-width(0, 650px) {
+            display: none;
+          }
+        }
+
+        &:before {
+          display: none;
+
+          @include range-width(0, 650px) {
+            display: inline-block;
+            content: '\e902';
+            font-family: 'icomoon';
+            font-size: 1.2rem;
+            width: 20px;
+            height: 20px;
+            color: white;
+            background-color: $c_yellow;
+            @include border-radius(10px);
+            padding: 9px 3px;
+            margin-top: 10px;
+            margin-right: 10px;
+            line-height: 0;
+          }
         }
       }
 
-      .cd_cent_article {
+      .cd_cent_title {
         display: inline-block;
-        width: 100%;
-        padding-left: 30px;
-        margin: 35px 0;
-        font-size: 2rem;
-        color: $c_dgrey;
+        width: calc(100% - 125px);
+        font-size: 2.5rem;
+        color: $c_green;
+        margin: 0;
+        padding: 0;
+
+        @include range-width(0, 650px) {
+          font-size: 1rem;
+          text-align: right;
+          padding: 11px 0;
+          width: calc(100% - 110px);
+        }
       }
 
-      .cd_cent_pic {
+      .cd_cent {
         display: inline-block;
-        min-width: 100%;
-        padding-left: 30px;
+        width: 100%;
+        padding-left: 125px;
 
-        img {
+        @include range-width(0, 650px) {
+          padding-left: 0;
+          padding: 0 5px;
+        }
+
+        .cd_cent_article {
+          display: inline-block;
           width: 100%;
+          margin: 35px 0;
+          font-size: 2rem;
+          color: $c_dgrey;
+
+          @include range-width(0, 650px) {
+            font-size: 1rem;
+            margin: 5px 0;
+            line-height: 1.5rem;
+          }
+        }
+
+        .cd_cent_pic {
+          display: inline-block;
+          min-width: 100%;
+
+          img {
+            width: 100%;
+          }
         }
       }
     }
   }
+
 }
 
 
