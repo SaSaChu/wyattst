@@ -5,51 +5,6 @@
 
 @import "_oa";
 
-@include font-face("Monaco", font-files("monaco/monaco.ttf", "monaco/monaco.otf"));
-@include font-face("icomoon", font-files("icomoon/icomoon.eot", "icomoon/icomoon.woff", "icomoon/icomoon.ttf", "icomoon/icomoon.svg"));
-[class^="icon-"], [class*=" icon-"] {
-  font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  @include font-smoothing(antialiased);
-}
-
-* {
-  &, &:after, &:before {
-    vertical-align: top;
-    @include box-sizing(border-box);
-    @include selection(rgba(150, 200, 255, 1), rgba(255, 255, 255, 1));
-    @include font-smoothing(antialiased);
-  }
-}
-
-html {
-  height: 100%;
-  font-size: 75%; /* 16px*75%=12px */
-
-  body {
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    font-size: 1rem;  /* 1*12px=12px */
-    font-family: "Roboto", "微軟正黑體", Monaco, "Microsoft JhengHei" ;
-    background-color: rgba(255, 255, 255, 1.00);
-    color: rgba(43, 43, 43, 1.00);
-
-    @include font-smoothing(antialiased);
-
-  }
-}
-
-
 $c_yellow: rgba(251, 209, 21, 1.00);
 $allwidth: 1000px;
 $c_lgrey: rgba(243, 243, 243, 1.00);
@@ -270,16 +225,18 @@ $c_green: rgba(0, 148, 139, 1.00);
   
 }
 
-
+#middle_boxs {
+  position: relative;
+}
 .blackbg_boxs {
   position: absolute;
   display: inline-block;
   width: 100%;
-  height: 101%;
-  padding-top: 150px;
-  top: 463px;
+  height: calc(100% - 252px);
+  top: 252px;
   left: 0;
   background-color: rgba(43, 43, 43, .6);
+  z-index: 999;
 
   .photo_arrow {
     display: inline-block;
@@ -287,57 +244,59 @@ $c_green: rgba(0, 148, 139, 1.00);
     // .p_left {}
     // .p_right {}
   }
+  a {
+    position: absolute;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:nth-child(1), &:nth-child(2) {
+      top: calc(50% - 50px / 2);
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+    }
+    
+    &:nth-child(1) {
+      left: 0;
+    }
+    &:nth-child(2) {
+      right: 0;
+    }
+    &:nth-child(3) {
+      right: 20px;
+      top: 100px;
+    }
+  }
+  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
 
   .bigphoto {
-    display: inline-block;
-    width: 100%;
+    
+    width: calc(100% - 40px * 2);
     max-width: $allwidth;
-    margin: 0 auto;
+    margin: 0 40px;
+
+    img {
+      width: 100%;
+    }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 255, 0.2);
+  z-index: 999;
+}

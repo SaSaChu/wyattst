@@ -49,5 +49,17 @@ $(function() {
       }
   });
 
-  
+  $('.calendar_boxs').each (function () {
+    var $that = $(this), $next = $that.next ();
+    if (!$next.hasClass ('cd_boxs')) return;
+    $next.data ('a', $next.outerHeight ()).css ({'height': 0});
+
+    $that.click (function () {
+      if ($(this).hasClass ('show'))
+        $next.css ({'height': 0});
+      else
+        $next.css ({'height': $next.data ('a')});
+      $(this).toggleClass ('show');
+    });
+  });
 });
