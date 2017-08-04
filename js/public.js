@@ -53,6 +53,33 @@ $(function() {
           $('#gotoTop').stop().fadeOut("fast");
       }
   });
+  function blackbg_boxs ($that) {
+    $that.addClass ('now').siblings ().removeClass ('now');
+    $('.blackbg_boxs').addClass ('show');
+
+    $('.blackbg_boxs img').attr ('src', $that.find (' img').attr ('src'));
+    $('.blackbg_boxs').get (0).l = $that.prev ().length ? $that.prev () : null;
+    $('.blackbg_boxs').get (0).r =  $that.next ().length ? $that.next () : null;
+  }
+  $('._box').click (function () {
+    blackbg_boxs ($(this));
+  });
+  $('.blackbg_boxs .icon-close').click (function () {
+    $('.blackbg_boxs').removeClass ('show');
+  });
+  $('.blackbg_boxs .icon-chevron-left').click (function () {
+    if ($('.blackbg_boxs').get (0).l)
+      blackbg_boxs ($('.blackbg_boxs').get (0).l);
+    else
+      $('.blackbg_boxs').removeClass ('show');
+
+  });
+  $('.blackbg_boxs .icon-chevron-right').click (function () {
+    if ($('.blackbg_boxs').get (0).r)
+      blackbg_boxs ($('.blackbg_boxs').get (0).r);
+    else
+      $('.blackbg_boxs').removeClass ('show');
+  });
 
   $('.calendar_boxs').each (function () {
     var $that = $(this), $next = $that.next ();

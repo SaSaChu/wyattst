@@ -215,6 +215,7 @@ $c_green: rgba(0, 148, 139, 1.00);
       color: $c_green;
       text-decoration: underline;
       font-weight: 600;
+      @include overflow-docx3();
 
       @include range-width(0, 650px) {
         width: 100%;
@@ -233,10 +234,21 @@ $c_green: rgba(0, 148, 139, 1.00);
   display: inline-block;
   width: 100%;
   height: calc(100% - 252px);
-  top: 252px;
+  top: -99999999px;
   left: 0;
   background-color: rgba(43, 43, 43, .6);
-  z-index: 999;
+  z-index: -999999;
+  @include transition(opacity .3s);
+  @include opacity(0);
+
+  &.show {
+    z-index: 999;
+    top: 252px;
+    @include opacity(1);
+    @include range-width(0, 650px) {
+      top: 159px;
+    };
+  }
 
   .photo_arrow {
     display: inline-block;
