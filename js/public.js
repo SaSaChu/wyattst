@@ -7,6 +7,11 @@ $(function() {
 
   var $mb = $('#moble_nav_boxs');
 
+  $('.no_pb .tag_bg').click(function() {
+    $('.no_pb').parent ().find ('>div').eq ($(this).index () + 1).addClass ('show').siblings ().removeClass ('show');
+    $(this).addClass ('tag_ac').siblings ().removeClass ('tag_ac');
+  }).eq (0).click ();
+
   $('.moble_open_icon').click(function() {
     $mb.addClass('s_open');
   });

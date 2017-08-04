@@ -986,6 +986,17 @@ $c_green: rgba(0, 148, 139, 1.00);
     .m_l_boxs {
       width: 480px;
       float: left;
+      @include clearfix();
+      >* {
+        float: left;
+        width: 100%;
+      }
+      ._t {
+        display: none;
+        &.show {
+          display: inline-block;
+        }
+      }
 
       @include range-width(0, 965px) {
         width: 100%;
