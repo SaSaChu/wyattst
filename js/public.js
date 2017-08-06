@@ -60,6 +60,8 @@ $(function() {
     $('.blackbg_boxs img').attr ('src', $that.find (' img').attr ('src'));
     $('.blackbg_boxs').get (0).l = $that.prev ().length ? $that.prev () : null;
     $('.blackbg_boxs').get (0).r =  $that.next ().length ? $that.next () : null;
+
+    $('.blackbg_boxs').attr ('data-i', $that.index () + 1).attr ('data-j', $that.parent ().find ('._box').length);
   }
   $('._box').click (function () {
     blackbg_boxs ($(this));
