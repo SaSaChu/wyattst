@@ -248,6 +248,9 @@ $c_green: rgba(0, 148, 139, 1.00);
     position: absolute;
     top: 24px;
     color: rgba(255, 255, 255, 1);
+    @include range-width(650px) {
+      display: none;
+    }
   }
 
   &:before {
