@@ -234,6 +234,16 @@ $c_green: rgba(0, 148, 139, 1.00);
   display: inline-block;
   width: 100%;
   height: calc(100% - 252px);
+  min-height: 900px;
+  @include range-width(0, 350px) {
+    min-height: 300px;
+  };
+  @include range-width(0, 450px) {
+    min-height: 400px;
+  };
+  @include range-width(0, 650px) {
+    min-height: 500px;
+  };
   top: -99999999px;
   left: 0;
   background-color: rgba(43, 43, 43, .6);
