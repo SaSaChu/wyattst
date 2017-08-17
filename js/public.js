@@ -86,7 +86,7 @@ $(function() {
   $('.calendar_boxs').each (function () {
     var $that = $(this), $next = $that.next ();
     if (!$next.hasClass ('cd_boxs')) return;
-    $next.data ('a', $next.outerHeight ()).css ({'height': 0});
+    var t = $next.outerHeight ();
 
     $that.click (function () {
       if ($(this).hasClass ('show'))
@@ -95,5 +95,18 @@ $(function() {
         $next.css ({'height': $next.data ('a')});
       $(this).toggleClass ('show');
     });
+
+    var i = 0;
+    var $img = $next.find ('img').clone().appendTo('body').hide();
+    $img.each (function () {
+      $(this).load (function () {
+        if (++i >= $img.length)
+          $next.data ('a', $next.outerHeight ()).css ({'height': 0});
+      });
+    });
+    setTimeout (function () {
+      i = $img.length;
+      $next.data ('a', $next.outerHeight ()).css ({'height': 0});
+    }, 1500);
   });
 });
