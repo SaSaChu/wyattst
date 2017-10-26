@@ -92,7 +92,7 @@ $c_green: rgba(0, 148, 139, 1.00);
   .cd_boxs {
     display: block;
     overflow: hidden;
-    @include transition(height .3s);
+    // @include transition(height 1s);
     
 
     // @include range-width(0, 650px) {
